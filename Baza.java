@@ -28,6 +28,17 @@ public class Baza
         cartasEnLaBaza++;
 
     }
+    
+      public int getPaloPrimeraCartaDeLaBaza()
+    {
+        int palo = -1;
+        if (baza[0] != null){
+            palo = baza[0].getPaloCarta();
+        }
+        return palo;
+
+    }
+
 
   
 }
