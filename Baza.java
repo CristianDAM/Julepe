@@ -10,6 +10,7 @@ public class Baza
     private int jugadoresEnLaBaza;
     private int cartasEnLaBaza;
     private Carta[] baza;
+    private int paloPinta;
 
     /**
      * Constructor for objects of class Baza
@@ -19,17 +20,24 @@ public class Baza
         jugadoresEnLaBaza = numJugadoresTiranCarta;
         baza = new Carta[numJugadoresTiranCarta];
         cartasEnLaBaza = 0;
+        paloPinta = paloQuePinta;
 
     }
 
+    /**
+     * Metodo que permite añadir una carta a la baza
+     */
     public void addCarta(Carta cartaQueSeTira, String nombreJugadorQueTira)
     {
         baza[cartasEnLaBaza] = cartaQueSeTira;
         cartasEnLaBaza++;
 
     }
-    
-      public int getPaloPrimeraCartaDeLaBaza()
+
+    /**
+     * Metodo que devuelve el palo de la primera carta de la baza
+     */
+    public int getPaloPrimeraCartaDeLaBaza()
     {
         int palo = -1;
         if (baza[0] != null){
@@ -39,6 +47,45 @@ public class Baza
 
     }
 
+    public Carta cartaQueVaGanandoLaBaza()
+    {
+        Carta cartaQueVaGanando = null;
+        boolean cartaGana = false;
+        Carta cartaUno = baza[0];
+        Carta cartaDos = baza[1];
+     
+       if (cartaUno.getPaloCarta() != cartaDos.getPaloCarta())
+        if(cartaUno.getPaloCarta() == paloPinta)
+        {
+            cartaQueVaGanando = cartaUno;
+        
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        return cartaQueVaGanando;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    }
 
   
 }
