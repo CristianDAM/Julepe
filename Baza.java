@@ -7,15 +7,26 @@
  */
 public class Baza
 {
-   private int jugadoresEnLaBaza;
-   
+    private int jugadoresEnLaBaza;
+    private int cartasEnLaBaza;
+    private Carta[] baza;
+
     /**
      * Constructor for objects of class Baza
      */
     public Baza(int numJugadoresTiranCarta, int paloQuePinta)
     {
         jugadoresEnLaBaza = numJugadoresTiranCarta;
-       
+        baza = new Carta[numJugadoresTiranCarta];
+        cartasEnLaBaza = 0;
+
+    }
+
+    public void addCarta(Carta cartaQueSeTira, String nombreJugadorQueTira)
+    {
+        baza[cartasEnLaBaza] = cartaQueSeTira;
+        cartasEnLaBaza++;
+
     }
 
   
